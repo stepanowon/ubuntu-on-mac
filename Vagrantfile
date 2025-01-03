@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     vb.cpus = 1
   end
 
-  (1..1).each do |i|
+  (1..3).each do |i|
     hostname = "server#{'%01d' % i}"
     config.vm.define "#{hostname}" do |node|
       node.vm.hostname = "#{hostname}"
