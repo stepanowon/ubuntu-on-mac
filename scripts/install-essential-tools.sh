@@ -3,7 +3,8 @@
 set -euo pipefail
 
 apt update 
-apt upgrade -y
+#apt upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
 
 apt install -y curl wget jq net-tools
 apt install -y git-all maven
