@@ -1,5 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "gutehall/ubuntu24-04"
+  config.vm.box_version = "2025.02.20"
 
   # CPU, Memory 설정
   config.vm.provider "vmware_desktop" do |vb|
