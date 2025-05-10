@@ -24,3 +24,4 @@ usermod -a -G docker user1
 systemctl enable docker
 systemctl start docker
 chmod 666 /var/run/docker.sock
+

@@ -9,24 +9,28 @@
 * 모든 vm에 hosts 파일 등록 : server1~3
 
 ## 설치방법
-* VMWare Fusion - 다음 경로에서 다운로드받아 설치합니다. 회원가입이 필요할 수 있습니다.
-  - https://support.broadcom.com/group/ecx/productfiles?subFamily=VMware%20Fusion&displayGroup=VMware%20Fusion%2013&release=13.6.1&os=&servicePk=524469&language=EN
+* Oracle VirtualBox - 다음 경로에서 다운로드받아 설치합니다.
+  - https://www.virtualbox.org/wiki/Downloads
+    * VirtualBox Extension Pack 도 함께 다운로드 받습니다.
+  - intel chip : macOS / Intel hosts
+  - M1,M2,M3 chip : macOS / Apple Silicon hosts
 
-* Vagrant 설치 - https://developer.hashicorp.com/vagrant/install?product_intent=vagrant
-```sh
-brew tap hashicorp/tap
-brew install hashicorp/tap/hashicorp-vagrant
-```
+  - 설치 시 주의사항
+    * 설치 도중 Python을 설치하는 과정이 진행될 수 있음
+    * 설치 도중 또는 직후에 다음과 같은 오류가 발생하는 경우 조치사항
+    ```sh
+    system Extension Blocked
+    A program tried to load new system extension(s) signed by "Oracle America, Inc." ...
 
-* Rosetta 설치 
-```sh
-/usr/sbin/softwareupdate --install-rosetta --agree-to-license
-```
-
-* vagrant-vmware-desktop 플러그인 설치
-```sh
-vagrant plugin install vagrant-vmware-desktop
-```
+    # Mac의 '시스템 설정' > '개인정보 보호 및 보안' 으로 이동
+    # '보안' 섹션에서 VirtualBox 응용프로그램 '허용' 하고 재부팅
+    ```
+  - 설치가 완료된 후에 VirtualBox를 실행하고 도구의 '三'을 클릭한 후 '확장'을 추가합니다.
+  - 앞에서 다운로드 받은 확장 팩을 설치합니다.
+* Vagrant 설치 - 다음 경로에서 다운로드받아 설치합니다.
+  - https://developer.hashicorp.com/vagrant/install
+  - intel chip : AMD64
+  - M1,M2,M3 chip : ARM64
 
 * Vagrantfile과 script를 다운로드하여 설치
 ```sh

@@ -1,9 +1,8 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "gutehall/ubuntu24-04"
-  config.vm.box_version = "2025.02.20"
+  config.vm.box = "bento/ubuntu-24.04"
 
   # CPU, Memory 설정
-  config.vm.provider "vmware_desktop" do |vb|
+  config.vm.provider "virtualbox" do |vb|
     vb.memory = 2048
     vb.cpus = 1
   end
@@ -13,6 +12,9 @@ Vagrant.configure("2") do |config|
     config.vm.define "#{hostname}" do |node|
       node.vm.hostname = "#{hostname}"
       node.vm.network "private_network", ip: "192.168.56.#{100 + i}"
+	  node.vm.provider "virtualbox" do |vb|
+		vb.name = "server#{'%01d' % i}"
+	  end
     end
   end
 
