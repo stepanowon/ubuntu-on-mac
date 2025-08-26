@@ -50,7 +50,7 @@ vagrant reload
 ```sh
 # server1, 2, 3 모두에서 실행
 sudo apt update 
-sudo apt install openjdk-17-jdk-headless -y
+sudo apt install openjdk-21-jdk-headless -y
 ```
 
 #### Jenkins 설치
