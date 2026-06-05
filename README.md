@@ -110,7 +110,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ### Jenkins 서버 접속
 
 - 브라우저를 열고 http://192.168.56.101:8080 으로 접속함
-
+- 접속이 안될 경우 '시스템 설정 - 개인정보 보호 및 보안 - 로컬 네트워크'로 이동 후 사용하는 브라우저를 로컬 네트워크와 통신할 수 있도록 권한을 허용함.
 ---
 
 ## Jenkins 분산 에이전트 추가
